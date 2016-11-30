@@ -1,0 +1,30 @@
+{
+  "name": "makenova",
+  "version": "0.0.1",
+  "description": "who is makenova?",
+  "main": "index.js",
+  "bin": {
+    "makenova": "./cli.js",
+    "mayiawo": "./cli.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "execa": "^0.5.0"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "bio",
+    "makenova",
+    "mayiawo"
+  ],
+  "author": "makenova",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makenova/makenova-cli"
+  },
+  "bugs": "https://github.com/makenova/makenova-cli/issues"
+}
