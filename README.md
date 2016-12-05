@@ -13,7 +13,7 @@ npm i -g makenova
 From the command line,
 
 ```sh
-makenova
+makenova --help
 ```
 
 ## Bugs
