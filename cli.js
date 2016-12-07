@@ -10,4 +10,6 @@ const yargs = require('yargs')
   .command('title', 'Display title', {}, () => console.log(makenova.title))
   .help('h')
   .alias('h', 'help')
+  .version()
+  .demand(1)
   .argv
