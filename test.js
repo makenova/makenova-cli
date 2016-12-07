@@ -24,3 +24,6 @@ test('test cli title', t => {
   return execa.stdout('./cli.js', ['title'])
     .then(result => t.is(result, title))
 })
+
+test.todo('test default no args')
+test.todo('test version')
