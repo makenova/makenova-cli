@@ -1,6 +1,16 @@
+import fs from 'fs'
 import test from 'ava'
 import execa from 'execa'
 import Makenova from './'
+
+function readfile(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, file) => {
+      if(err) return reject(err)
+      resolve(file)
+    })
+  })
+}
 
 const name = `Mayiawo Aken'Ova`
 const title = `Code pusher`
@@ -25,5 +35,8 @@ test('test cli title', t => {
     .then(result => t.is(result, title))
 })
 
-test.todo('test default no args')
-test.todo('test version')
+test('test cli default no args', t => t.throws(execa('.cli.js')))
+
+test.todo('test version', t => {
+
+})
