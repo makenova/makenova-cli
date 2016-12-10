@@ -24,12 +24,13 @@ function parse(string) {
 }
 
 const name = `Mayiawo Aken'Ova`
-const title = `Code pusher`
-const formalTitle = `Programmer`
-const alias = `makenova`
-const twitter = `@make_nova`
-const github = `https://github.com/makenova`
-const website = `http://makenova.com`
+const title = 'Code pusher'
+const formalTitle = 'Programmer'
+const alias = 'makenova'
+const twitter = '@make_nova'
+const github = 'https://github.com/makenova'
+const website = 'http://makenova.com'
+const location = 'Oklahoma City, OK'
 
 test('test name', t => {
   const makenova = new Makenova()
@@ -66,6 +67,11 @@ test('test website', t => {
   t.is(website, makenova.website)
 })
 
+test('test location', t => {
+  const makenova = new Makenova()
+  t.is(location, makenova.location)
+})
+
 test('test cli name', t => {
   return execa.stdout('./cli.js', ['name'])
     .then(result => t.is(result, name))
@@ -99,6 +105,11 @@ test('test cli github', t => {
 test('test cli website', t => {
   return execa.stdout('./cli.js', ['website'])
     .then(result => t.is(result, website))
+})
+
+test('test cli location', t => {
+  return execa.stdout('./cli.js', ['location'])
+    .then(result => t.is(result, location))
 })
 
 test('test cli default no args', t => t.throws(execa('.cli.js')))

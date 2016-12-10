@@ -10,6 +10,8 @@ function printAlias() { console.log(makenova.alias) }
 function printTwitter() { console.log(makenova.twitter) }
 function printGithub() { console.log(makenova.github) }
 function printWebsite() { console.log(makenova.website) }
+function printLocation() { console.log(makenova.location) }
+function printWHOIS() { console.log(makenova.whois()) }
 function printTitle(argv) {
   if (argv.f)
     console.log(makenova.formalTitle)
@@ -32,6 +34,8 @@ const yargs = require('yargs')
   .command('twitter', 'Display twitter', {}, printTwitter)
   .command('github', 'Display github', {}, printGithub)
   .command('website', 'Display website', {}, printWebsite)
+  .command('location', 'Display location', {}, printLocation)
+  .command('whois', 'Who is $0', {}, printWHOIS)
   .help('h')
   .alias('h', 'help')
   .version()
