@@ -25,6 +25,7 @@ function parse(string) {
 
 const name = `Mayiawo Aken'Ova`
 const title = `Code pusher`
+const formalTitle = `Programmer`
 const alias = `makenova`
 const twitter = `@make_nova`
 const github = `https://github.com/makenova`
@@ -38,6 +39,11 @@ test('test name', t => {
 test('test title', t => {
   const makenova = new Makenova()
   t.is(title, makenova.title)
+})
+
+test('test formal title', t => {
+  const makenova = new Makenova()
+  t.is(formalTitle, makenova.formalTitle)
 })
 
 test('test alias', t => {
@@ -68,6 +74,31 @@ test('test cli name', t => {
 test('test cli title', t => {
   return execa.stdout('./cli.js', ['title'])
     .then(result => t.is(result, title))
+})
+
+test('test cli formal title', t => {
+  return execa.stdout('./cli.js', ['title', '--formal'])
+    .then(result => t.is(result, formalTitle))
+})
+
+test('test cli alias', t => {
+  return execa.stdout('./cli.js', ['alias'])
+    .then(result => t.is(result, alias))
+})
+
+test('test cli twitter', t => {
+  return execa.stdout('./cli.js', ['twitter'])
+    .then(result => t.is(result, twitter))
+})
+
+test('test cli github', t => {
+  return execa.stdout('./cli.js', ['github'])
+    .then(result => t.is(result, github))
+})
+
+test('test cli website', t => {
+  return execa.stdout('./cli.js', ['website'])
+    .then(result => t.is(result, website))
 })
 
 test('test cli default no args', t => t.throws(execa('.cli.js')))

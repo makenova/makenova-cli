@@ -4,18 +4,34 @@
 
 const Makenova = require('./')
 const makenova = new Makenova()
+
+function printName() { console.log(makenova.name) }
+function printAlias() { console.log(makenova.alias) }
+function printTwitter() { console.log(makenova.twitter) }
+function printGithub() { console.log(makenova.github) }
+function printWebsite() { console.log(makenova.website) }
+function printTitle(argv) {
+  if (argv.f)
+    console.log(makenova.formalTitle)
+  else
+    console.log(makenova.title)
+}
+
+const titleBuilder = {
+  formal: {
+    alias: 'f',
+    default: false
+  }
+}
+
 const yargs = require('yargs')
   .usage('$0 <cmd>')
-  .command('name', 'Display name', {}, () => console.log(makenova.name))
-  .command('title', 'Display title', {}, () => console.log(makenova.title))
-  .command('alias', 'Display alias', {}, () => console.log(makenova.alias))
-  .command('twitter', 'Display twitter', {}, () => {
-    console.log(makenova.twitter)
-  })
-  .command('github', 'Display github', {}, () => console.log(makenova.github))
-  .command('website', 'Display website', {}, () => {
-    console.log(makenova.website)
-  })
+  .command('name', 'Display name', {}, printName)
+  .command('title', 'Display title', titleBuilder, printTitle)
+  .command('alias', 'Display alias', {}, printAlias)
+  .command('twitter', 'Display twitter', {}, printTwitter)
+  .command('github', 'Display github', {}, printGithub)
+  .command('website', 'Display website', {}, printWebsite)
   .help('h')
   .alias('h', 'help')
   .version()

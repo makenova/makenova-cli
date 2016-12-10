@@ -8,6 +8,7 @@ class Makenova {
     this.github = 'https://github.com/makenova'
     this.website = 'http://makenova.com'
     this.title = 'Code pusher'
+    this.formalTitle = 'Programmer'
   }
 }
 
