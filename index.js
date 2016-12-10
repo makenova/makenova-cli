@@ -14,8 +14,14 @@ class Makenova {
 
   whois(config) {
     if(!config) config = {}
+    // TODO: write a string template function that wraps at 80 lines
     return `
-    ${this.name} is a ${config.formal ? this.formalTitle : this.title} from Nigeria who lives and works in ${this.location}
+    ${this.name} is a ${config.formal ? this.formalTitle : this.title} from Nigeria who lives and works in ${this.location}.
+    He is ${this.alias} on the internet ...for the most part.
+
+    Twitter: https://twitter.com/${this.twitter}
+    Github: ${this.github}
+    Website: ${this.website}
     `
   }
 }
